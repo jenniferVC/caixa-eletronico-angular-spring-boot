@@ -1,0 +1,51 @@
+<mat-toolbar color="primary">
+    <span>Banco</span>
+    <div fxFlex></div>
+    <button  (click)="onLogout()" mat-icon-button class="example-icon" aria-label="Icone de sair da conta" matTooltip="Sair">
+      <mat-icon>logout</mat-icon>
+    </button>
+</mat-toolbar>
+
+<div style="height: 100vh;">
+  <div fxLayout="row wrap" fxLayoutAlign="center center">
+
+    <div fxFlex="80%" fxLayout="row wrap" style="margin: 5px;">
+      <div fxFlex="100%">
+
+        <mat-card fxFlex="100%">
+          <mat-card-header>
+            <mat-card-title>Número da conta</mat-card-title>
+            <mat-card-subtitle>{{numero}}</mat-card-subtitle>
+            <div fxFlex></div>
+            <div>
+              <mat-card-title>Senha</mat-card-title>
+              <mat-card-subtitle>{{senha}}</mat-card-subtitle>
+            </div>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+
+    <div fxFlex="80%" fxLayout="row wrap">
+      <div fxFlex="calc(50% - 5)" style="margin: 5px;">
+        <mat-card fxFlex="100%">Aqui vai o PIX de ex</mat-card>
+      </div>
+      <div fxFlex="calc(50% - 5)" style="margin: 5px;">
+        <mat-card fxFlex="100%">
+          <mat-card-title>Saldo</mat-card-title>
+          <mat-card-subtitle>{{saldo | currency: 'BRL'}}</mat-card-subtitle>
+        </mat-card>
+      </div>
+    </div>
+
+    <div fxFlex="80%" fxLayout="row wrap">
+      <div fxFlex="calc(50% - 5)" style="margin: 5px;">
+        <button fxFlex="100%" mat-raised-button color="primary" (click)="onDepositar()">Depositar</button>
+      </div>
+      <div fxFlex="calc(50% - 5)" style="margin: 5px;">
+        <button fxFlex="100%" mat-raised-button (click)="onSacar()">Sacar</button>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,14 @@
+<h1 mat-dialog-title>{{data.operacao}}</h1>
+<div mat-dialog-content>
+  <p>Qual o valor que deseja?</p>
+  <form [formGroup]="form">
+    <mat-form-field appearance="fill">
+      <mat-label>Insira o valor</mat-label>
+      <input matInput formControlName="valor">
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-dialog-close>Cancelar</button>
+  <button mat-button (click)="onSubmit()" cdkFocusInitial>Ok</button>
+</div>

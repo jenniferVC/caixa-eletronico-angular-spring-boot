@@ -1,0 +1,27 @@
+<div class="container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Nova conta</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="form" class="form">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Conta</mat-label>
+        <input matInput formControlName="numero">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput formControlName="senha">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Saldo</mat-label>
+        <input matInput placeholder="R$ 0,00" formControlName="saldo">
+      </mat-form-field>
+    </form>
+    <mat-card-actions>
+      <button mat-raised-button (click)="onSubmit()" style="background-color: #a530f5; color: white"> Criar conta </button>
+      <button mat-raised-button> Cancelar</button>
+    </mat-card-actions>
+  </mat-card>
+</div>

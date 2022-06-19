@@ -1,0 +1,29 @@
+<div class="container">
+  <mat-card class="mat-elevation-z8">
+    <mat-card-header>
+      <mat-card-title>Banco</mat-card-title>
+    </mat-card-header>
+    <form [formGroup]="form" class="form" >
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Conta</mat-label>
+        <input matInput formControlName="conta">
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </form>
+    <mat-card-actions>
+      <!-- FAZER UMA FLAG PRA DESABILITAR ESSE BOTÃO SE A CONTA INSERIDA NÃO EXISTIR-->
+      <button mat-raised-button color="primary" (click)="onLoginAccount()"> Entrar </button>
+      <button mat-raised-button (click)="onRegister()" style="background-color: #a530f5; color: white"> Criar nova conta </button>
+    </mat-card-actions>
+  </mat-card>
+</div>
+
+<router-outlet></router-outlet>
