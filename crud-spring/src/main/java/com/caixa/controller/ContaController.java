@@ -55,9 +55,9 @@ public class ContaController {
       Conta c = contaRepository.findById(id)
       .orElseThrow(()-> new ResourceAccessException("Não existe conta com id: "+id));
 
-      c.setNumero(contaDetails.getNumero());
-      c.setSaldo(contaDetails.getSaldo());
-      c.setSenha(contaDetails.getSenha());
+      // c.setNumero(contaDetails.getNumero());
+      // c.setSaldo(contaDetails.getSaldo());
+      // c.setSenha(contaDetails.getSenha());
 
     Conta contaUpdated = contaRepository.save(c);
     return ResponseEntity.ok(contaUpdated);
